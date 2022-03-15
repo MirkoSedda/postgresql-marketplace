@@ -2,6 +2,7 @@ import express from "express";
 import pool from "./utils/db.js";
 import cors from "cors";
 import productsRouter from "./services/product.js";
+import reviewsRouter from "./services/review.js";
 
 const server = express();
 
@@ -10,6 +11,7 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/products", productsRouter);
+server.use("/review", reviewsRouter);
 
 const { PORT = 3001 } = process.env;
 
